@@ -17,4 +17,4 @@ All pull requests must adhere to the [PSR-2 standard](https://github.com/php-fig
 
 All pull requests must be accompanied by passing unit tests and complete code coverage.
 
-[Learn more](https://github.com/shakahl/laravel-eloquent-mysqli/)
+[Learn more](https://github.com/wolf-oz/laravel-eloquent-mysqli/)

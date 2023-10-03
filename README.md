@@ -1,24 +1,12 @@
 # shakahl/laravel-eloquent-mysqli
-MySQLi driver (connector) for Laravel **8.x** Eloquent database
+MySQLi driver (connector) for Laravel **9.x** Eloquent database
 
 ## Installation
 
 - Install via composer
 
 ```sh
-composer require shakahl/laravel-eloquent-mysqli
-```
-
-- After installing, add provider on config/app.php on your project.
-
-```php
-// app.php
-
-    'providers' => [
-        ...
-
-        'LaravelEloquentMySQLi\MySQLiServiceProvider',
-    ],
+composer require wolf-oz/laravel-eloquent-mysqli
 ```
 
 ## Usage
