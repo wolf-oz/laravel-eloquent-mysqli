@@ -1,4 +1,4 @@
-# shakahl/laravel-eloquent-mysqli
+# wolf-oz/laravel-eloquent-mysqli
 MySQLi driver (connector) for Laravel **9.x** Eloquent database
 
 ## Installation
