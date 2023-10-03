@@ -1,0 +1,48 @@
+{
+	"name" : "wolf-oz/laravel-eloquent-mysqli",
+	"type" : "library",
+	"description" : "MySQLi driver (connector) for Laravel 9.x Eloquent database",
+	"version" : "1.0",
+	"keywords" : [
+		"Laravel",
+		"Lumen",
+		"MySQL",
+		"mysqli",
+		"driver",
+		"connector"
+	],
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Wolf Oz",
+			"email" : "wolf_oz@ukr.net",
+			"homepage" : "https://github.com/wolf-oz"
+		}
+	],
+	"require" : {
+		"php" : ">=8.0",
+		"illuminate/contracts" : "9.*",
+		"illuminate/database" : "9.*",
+		"illuminate/support" : "9.*"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "~10.0"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"LaravelEloquentMySQLi\\" : "src/"
+		}
+	},
+	"autoload-dev" : {
+		"psr-4" : {
+			"LaravelEloquentMySQLi\\Tests\\" : "tests/"
+		}
+	},
+	"extra" : {
+		"laravel" : {
+			"providers" : [
+				"LaravelEloquentMySQLi\\MySQLiServiceProvider"
+			]
+		}
+	},
+	"minimum-stability" : "stable"
+}
