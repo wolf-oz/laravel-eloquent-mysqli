@@ -6,7 +6,7 @@ use Exception;
 use Illuminate\Database\Connectors\Connector;
 use Illuminate\Database\Connectors\ConnectorInterface;
 use Illuminate\Support\Arr;
-use mysqli;
+use LaravelEloquentMySQLi\mysqli;
 
 class MySQLiConnector extends Connector implements ConnectorInterface
 {

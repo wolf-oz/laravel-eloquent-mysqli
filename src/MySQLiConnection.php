@@ -189,19 +189,19 @@ class MySQLiConnection extends Connection implements ConnectionInterface
             // For select statements, we'll simply execute the query and return an array
             // of the database result set. Each element in the array will be a single
             // row from the database table, and will either be an array or objects.
-            $statement = $this->prepared2($this->getMySqliForSelect($useRead)
-                ->prepare($query));
+			$statement = $this->prepared2($this->getMySqliForSelect($useRead)->prepare($query));
 
-            $this->bindValues($statement, $this->prepareBindings($bindings));
+			$this->bindValues($statement, $this->prepareBindings($bindings));
 
             $statement->execute();
-
+            
             $result = $statement->get_result();
-
+            $statement->close();
+            
+            
             if ($result) {
-                return $result->fetch_all(MYSQLI_ASSOC);
+				return $result->fetch_all(MYSQLI_ASSOC);
             }
-
             return [];
 
             //return $statement->fetch_all(MYSQLI_ASSOC);
@@ -268,13 +268,16 @@ class MySQLiConnection extends Connection implements ConnectionInterface
     /**
      * Configure the mysqli prepared statement.
      *
-     * @param  \mysqli_stmt $statement
+     * @param  \mysqli_stmt|false $statement
      * @return \mysqli_stmt
      */
-    protected function prepared2(\mysqli_stmt $statement)
-    {
+    protected function prepared2(\mysqli_stmt|false $statement) {
         //$statement->setFetchMode($this->fetchMode);
-
+    	
+	    if( !$statement ) {
+	    	throw new \Exception($this->getMySqli()->error, $this->getMySqli()->errno);
+	    }
+    	
         $this->event(new StatementPrepared(
             $this, $statement
         ));
