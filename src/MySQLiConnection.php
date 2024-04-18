@@ -426,7 +426,7 @@ class MySQLiConnection extends Connection implements ConnectionInterface
      *
      * @return void
      */
-    protected function reconnectIfMissingConnection()
+    public function reconnectIfMissingConnection()
     {
         if (is_null($this->mysqli)) {
             $this->reconnect();
@@ -584,7 +584,7 @@ class MySQLiConnection extends Connection implements ConnectionInterface
         }
     }
 
-    protected function escape($str)
+    public function escape($str, $binary = false )
     {
         return strtr($str, $this->mysqlEscapeChars);
     }
