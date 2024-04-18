@@ -1,5 +1,5 @@
 # wolf-oz/laravel-eloquent-mysqli
-MySQLi driver (connector) for Laravel **9.x** Eloquent database
+MySQLi driver (connector) for Laravel **10.x** Eloquent database
 
 ## Installation
 

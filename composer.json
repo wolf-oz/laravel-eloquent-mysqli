@@ -1,7 +1,7 @@
 {
 	"name" : "wolf-oz/laravel-eloquent-mysqli",
 	"type" : "library",
-	"description" : "MySQLi driver (connector) for Laravel 9.x Eloquent database",
+	"description" : "MySQLi driver (connector) for Laravel 10.x Eloquent database",
 	"version" : "1.0",
 	"keywords" : [
 		"Laravel",
