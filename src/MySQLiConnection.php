@@ -5,11 +5,11 @@ namespace LaravelEloquentMySQLi;
 use Closure;
 use DateTimeInterface;
 use Exception;
-use Illuminate\Database\Concerns\ManagesTransactions;
+//use Illuminate\Database\Concerns\ManagesTransactions;
 use Illuminate\Database\Connection;
 use Illuminate\Database\ConnectionInterface;
-use Illuminate\Database\DetectsConcurrencyErrors;
-use Illuminate\Database\DetectsLostConnections;
+//use Illuminate\Database\DetectsConcurrencyErrors;
+//use Illuminate\Database\DetectsLostConnections;
 use Illuminate\Database\Events\StatementPrepared;
 use Illuminate\Database\Grammar;
 use Illuminate\Database\Query\Builder as QueryBuilder;
@@ -22,9 +22,9 @@ use mysqli;
 
 class MySQLiConnection extends Connection implements ConnectionInterface
 {
-    use DetectsConcurrencyErrors,
+    /*use DetectsConcurrencyErrors,
         DetectsLostConnections,
-        ManagesTransactions;
+        ManagesTransactions;*/
 
     /**
      * The active MySqli connection.
@@ -85,7 +85,7 @@ class MySQLiConnection extends Connection implements ConnectionInterface
      */
     protected function getDefaultQueryGrammar()
     {
-        return $this->withTablePrefix(new QueryGrammar());
+        return $this->withTablePrefix(new QueryGrammar($this));
     }
 
     /**
